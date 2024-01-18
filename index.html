@@ -1,22 +1,96 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <link href="https://fonts.googleapis.com/css2?family=Space+Mono&display=swap" rel="stylesheet">
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Mono&display=swap"
+      rel="stylesheet"
+    />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/svg+xml" href="images/icon.svg" />
     <title>OWASP IIITD</title>
     <script src="https://cdn.tailwindcss.com"></script>
 
     <style>
-        body {
-            font-family: 'Space Mono', monospace;
-        }
+      body {
+        font-family: "Space Mono", monospace;
+      }
     </style>
-</head>
-<body>
-        <div class="flex flex-col items-center p-40 items-center min-h-screen bg-gray-100 dark:bg-gray-900 top-1/4 w-full">
-        <img src="white.svg" width="400" alt="OWASP Logo">
-        <h2 class="text-xl font-bold text-gray-900 dark:text-gray-100">Coming Soon&trade;</h2>
-        </div>
-</body>
+
+    <script>
+      window.addEventListener("DOMContentLoaded", (event) => {
+        const logo = document.getElementById("logo");
+        const darkModeMediaQuery = window.matchMedia(
+          "(prefers-color-scheme: dark)"
+        );
+
+        const setLogoSource = (e) => {
+          if (e.matches) {
+            logo.src = "images/black.svg"; // path to the logo for dark theme
+          } else {
+            logo.src = "images/white.svg"; // path to the logo for light theme
+          }
+        };
+
+        // Set the logo source when the page loads
+        setLogoSource(darkModeMediaQuery);
+
+        // Update the logo source every time the browser theme is changed
+        darkModeMediaQuery.addEventListener("change", setLogoSource);
+      });
+    </script>
+  </head>
+  <body class="h-screen grid grid-rows-5 bg-gray-100 dark:bg-gray-900">
+    <div></div>
+    <div class="flex flex-col items-center justify-center">
+      <img
+        id="logo"
+        class="w-8/12 max-w-sm"
+        src="images/black.svg"
+        alt="OWASP Logo"
+      />
+      <h2 class="text-xl mx-8 text-gray-900 dark:text-gray-100 text-center">
+        <span class="font-extrabold underline"
+          >This was not a malicious QR code.</span
+        >
+        Doesn't mean next time it won't be
+      </h2>
+
+      <h3
+        class="text-lg mx-8 mt-10 text-gray-900 dark:text-gray-100 text-center"
+      >
+        You should probably not be scanning random QR codes ;)
+      </h3>
+    </div>
+    <div></div>
+    <div></div>
+    <a href="https://www.instagram.com/owaspiiitd/" alt="owaspiiitd instagram" target="_blank">
+
+      <svg
+        class="mx-auto fill-black dark:fill-white"
+        xmlns="http://www.w3.org/2000/svg"
+        height="50"
+        width="50"
+        viewBox="0 0 448 512"
+      >
+        <path
+          d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z"
+        />
+      </svg>
+    </a>
+  </body>
 </html>
+
+<!-- <div class="flex flex-col items-center lg:p-40 p-5 items-center min-h-screen bg-gray-100 dark:bg-gray-900 top-1/4 w-full">
+        <img src="white.svg" width="1000" alt="OWASP Logo">
+        <h2 class="text-xl font-bold text-gray-900 dark:text-gray-100">Coming Soon&trade;</h2>
+        </div> -->
+
+<!-- <div
+        class="flex flex-col items-center min-h-screen bg-gray-100 top-1/4 dark:bg-gray-900"
+      >
+        <img class="w-full max-w-sm" src="white.svg" alt="OWASP Logo" />
+        <h2 class="text-xl font-bold text-gray-900 dark:text-gray-100 mt-4">
+          Coming Soon&trade;
+        </h2>
+      </div> -->
